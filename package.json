@@ -1,0 +1,21 @@
+{
+  "name": "electron-tab-containers",
+  "version": "1.0.0",
+  "description": "Electron 多标签页多容器",
+  "author": "yuanxiao",
+  "license": "MIT",
+  "private": false,
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "render:dev": "vite",
+    "start": "yarn build && electron ."
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "electron": "^27.0.3",
+    "electron-builder": "^24.6.4",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  }
+}

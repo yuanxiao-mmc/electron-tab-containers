@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多标签页桌面端示例</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tab-group-button hidden">
+        <div class="button-left" id="scrollLeftButton"></div>
+      </div>
+
+      <tab-group class="tab-group" :new-tab-button="false"></tab-group>
+      <div class="tab-group-button hidden">
+        <div class="button-right" id="scrollRightButton"></div>
+      </div>
+    </div>
+    <script type="module" src="./render/main.ts"></script>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    background: #eff0f4;
+  }
+
+  .container {
+    height: 40px;
+    display: flex;
+    -webkit-app-region: drag;
+  }
+
+  .container .tab-group {
+    display: flex;
+    flex: 1;
+    overflow-x: auto;
+  }
+
+  .tab-group-button.hidden {
+    display: none;
+  }
+
+  .tab-group-button .button-left {
+    display: flex;
+    width: 20px;
+    height: 100%;
+    margin-left: 7px;
+    background-image: url('./assets/tab_group_left.png');
+    background-size: 20px 32px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  .tab-group-button .button-right {
+    width: 20px;
+    height: 100%;
+    margin-right: 7px;
+    background-image: url('./assets/tab_group_right.png');
+    background-size: 20px 32px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+</style>
