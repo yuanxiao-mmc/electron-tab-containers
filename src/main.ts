@@ -1,7 +1,6 @@
-import { app, BrowserWindow } from 'electron'
+import { app } from 'electron'
 import { createWindow } from './window'
 import { DesktopService } from './service'
-import { GDTabPageContainer } from './pages'
 
 app.whenReady().then(() => {
   DesktopService.shared.init()
