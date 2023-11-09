@@ -7,8 +7,6 @@ app.whenReady().then(() => {
   DesktopService.shared.init()
 
   createWindow()
-
-  GDTabPageContainer.shared.switchTab('https://www.gaoding.com')
 })
 
 app.on('window-all-closed', () => {

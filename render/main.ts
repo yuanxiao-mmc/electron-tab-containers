@@ -3,6 +3,7 @@ import './tabs'
 import { GNBEventManager } from './utils/event-manager'
 import {
   closeTabOnTabPage,
+  createTabOnWindow,
   frameDidReadyOnTabPage,
   onCloseTab,
   onCreateTab,
@@ -68,3 +69,5 @@ frameDidReadyOnTabPage()
 tabGroup.on('tab-active', (tab: any) => {
   switchTabOnWindow(tab.containerId)
 })
+
+createTabOnWindow('https://www.gaoding.com')
