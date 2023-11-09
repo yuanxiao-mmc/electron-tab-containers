@@ -132,7 +132,9 @@ class TabGroup extends HTMLElement {
     if (this.options.newTabButton) {
       const button = this.buttonContainer.appendChild(document.createElement('button'))
       button.innerHTML = this.options.newTabButtonText
-      button.addEventListener('click', this.addTab.bind(this, undefined), false)
+      button.addEventListener('click', () => {
+        this.emit('click-add-button')
+      })
     }
 
     const style = document.createElement('style')

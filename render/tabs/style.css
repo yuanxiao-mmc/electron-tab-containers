@@ -47,7 +47,6 @@
 
 .tabs {
   display: flex;
-  flex: 1;
   height: 100%;
   user-select: none;
 }
@@ -229,6 +228,35 @@
 
 .tab-close button:hover,
 .tab-close button:active {
+  color: var(--button-hover-color);
+  background: var(--button-hover-background);
+}
+
+.buttons {
+  display: flex;
+  padding: 5px;
+  border-left: 1px solid var(--tab-border-color);
+}
+
+
+.buttons button {
+  color: var(--button-color);
+  background: var(--button-background);
+  border-radius: var(--button-border-radius);
+	cursor: var(--button-cursor);
+  font-size: var(--button-font-size);
+  display: block;
+  font-family: inherit;
+  border: none;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 1;
+  padding: 1px 0 0 0;
+}
+
+.buttons button:hover {
   color: var(--button-hover-color);
   background: var(--button-hover-background);
 }

@@ -66,8 +66,12 @@ onClose(tabGroup)
 onTabContentChange(tabGroup)
 frameDidReadyOnTabPage()
 
-tabGroup.on('tab-active', (tab: any) => {
-  switchTabOnWindow(tab.containerId)
+tabGroup.on('tab-active', (tab: Tab) => {
+  tab.containerId && switchTabOnWindow(tab.containerId)
+})
+
+tabGroup.on('click-add-button', () => {
+  createTabOnWindow('https://www.gaoding.com/create-design')
 })
 
 createTabOnWindow('https://www.gaoding.com')
