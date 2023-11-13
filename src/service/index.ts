@@ -36,7 +36,7 @@ const frameDidReadyOnTabPage = async (_event: any) => {
 }
 
 const switchTabOnWindow = (_: IpcMainEvent, { id = -1 }) => {
-  GDTabPageContainer.shared.switchTabWithId(id)
+  GDTabPageContainer.shared.switchTabWithId(id, false)
 }
 
 const createTabOnWindow = (_: IpcMainEvent, { url = '' }) => {

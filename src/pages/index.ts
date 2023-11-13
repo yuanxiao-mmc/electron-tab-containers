@@ -67,12 +67,14 @@ export class GDTabPageContainer {
    * 切换 Tab 页
    * @param id 容器 ID
    */
-  public async switchTabWithId(id: number): Promise<GDWebContainer> {
+  public async switchTabWithId(id: number, notify = true): Promise<GDWebContainer> {
     console.log(`触发 Tab 切换 id: ${id}`)
-    GNBEventBus.shared.emit({
-      eventName: 'desktop.onSwitchTab',
-      data: { id: id },
-    })
+    if (notify) {
+      GNBEventBus.shared.emit({
+        eventName: 'desktop.onSwitchTab',
+        data: { id: id },
+      })
+    }
     const container = GDContainerManager.shared.getContainer(id)!
     this.attachContainerIfNeed(container)
     this.window.setTopBrowserView(container.context)

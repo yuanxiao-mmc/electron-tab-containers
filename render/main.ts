@@ -44,6 +44,7 @@ const onClose = (tabGroup: any) => {
 
 const onSwitch = (tabGroup: any) => {
   onSwitchTab(this, (id) => {
+    // 监听到需要切换标签
     let tab = tabGroup.tabs.find((item: { containerId: number }) => item.containerId == id)
     if (tab && !tab.isActivated) {
       tab.activate()
@@ -67,11 +68,14 @@ onTabContentChange(tabGroup)
 frameDidReadyOnTabPage()
 
 tabGroup.on('tab-active', (tab: Tab) => {
+  // 用户主动切换标签
   tab.containerId && switchTabOnWindow(tab.containerId)
 })
 
 tabGroup.on('click-add-button', () => {
   createTabOnWindow('https://www.gaoding.com/create-design')
 })
+
+createTabOnWindow('https://www.gaoding.com')
 
 createTabOnWindow('https://www.gaoding.com')
