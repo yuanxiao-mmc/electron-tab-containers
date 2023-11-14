@@ -1,6 +1,6 @@
 import { BrowserView, BrowserViewConstructorOptions } from 'electron'
 import { GNBEventBus } from '../helpers/event-bus'
-import { handleOpenWindow } from '../helpers/web'
+import { handleOpenWindow, startDevToolsIfNeed } from '../helpers/web'
 
 /**
  * Web 容器选项
@@ -147,6 +147,8 @@ export class GDWebContainer {
     })
 
     handleOpenWindow(this.context.webContents)
+
+    startDevToolsIfNeed(this.context.webContents)
   }
 
   private configDocumentInfo() {
