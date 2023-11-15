@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "render:dev": "vite",
-    "start": "yarn build && electron ."
+    "start": "yarn build && electron --inspect=5858 ."
   },
   "devDependencies": {
     "@types/node": "^20.8.10",
