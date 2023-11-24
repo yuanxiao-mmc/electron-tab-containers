@@ -53,11 +53,11 @@ class GDContainerManager {
       throw new Error('Container 创建失败')
     }
     options && webContainer.setOptions(options)
-    webContainer.context.setAutoResize({
-      width: true,
-      height: true,
-      horizontal: true,
-    })
+    // webContainer.context.setAutoResize({
+    //   width: true,
+    //   height: true,
+    //   horizontal: true,
+    // })
     webContainer.loadURL(url)
     this.containers.set(webContainer.id, webContainer)
     this.preloadContainer()

@@ -199,9 +199,17 @@ export class GDTabPageContainer {
     this.emitter.emit(FRAME_READY)
   }
 
+  private _mainWindow: BrowserWindow
+
   // ================ Private Methods ================= //
   private get window(): BrowserWindow {
-    return mainWindow
+    if (!this._mainWindow) {
+      this._mainWindow = mainWindow
+      this._mainWindow.on('resize', () => {
+        this.setContainerBounds(this.getCurrentTabContainer())
+      })
+    }
+    return this._mainWindow
   }
 
   private async initFrameIfNeed(): Promise<void> {
